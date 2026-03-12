@@ -37,21 +37,21 @@ public class DataUtilitiesTest {
 	}
 
 	@Test
-	public void testCalculateColumnTotalForFirstColumnReturnsCorrectSum() {
+	public void testCalculateColumnTotalForFirstColumnShouldBeFive() {
 		Values2D data = createSampleValues2D();
 		assertEquals("calculateColumnTotal should return the correct total for column 0.",
 				5.0, DataUtilities.calculateColumnTotal(data, 0), 0.000000001d);
 	}
 
 	@Test
-	public void testCalculateColumnTotalForSecondColumnReturnsCorrectSum() {
+	public void testCalculateColumnTotalForSecondColumnShouldBeSeven() {
 		Values2D data = createSampleValues2D();
 		assertEquals("calculateColumnTotal should return the correct total for column 1.",
 				7.0, DataUtilities.calculateColumnTotal(data, 1), 0.000000001d);
 	}
 
 	@Test
-	public void testCalculateColumnTotalWithNullDataThrowsException() {
+	public void testCalculateColumnTotalWithNullDataShouldThrowIllegalArgumentException() {
 		try {
 			DataUtilities.calculateColumnTotal(null, 0);
 			fail("No exception thrown. The expected outcome was IllegalArgumentException.");
@@ -62,21 +62,21 @@ public class DataUtilitiesTest {
 	}
 
 	@Test
-	public void testCalculateRowTotalForFirstRowReturnsCorrectSum() {
+	public void testCalculateRowTotalForFirstRowShouldBeSix() {
 		Values2D data = createSampleValues2D();
 		assertEquals("calculateRowTotal should return the correct total for row 0.",
 				6.0, DataUtilities.calculateRowTotal(data, 0), 0.000000001d);
 	}
 
 	@Test
-	public void testCalculateRowTotalForSecondRowReturnsCorrectSum() {
+	public void testCalculateRowTotalForSecondRowShouldBeFifteen() {
 		Values2D data = createSampleValues2D();
 		assertEquals("calculateRowTotal should return the correct total for row 1.",
 				15.0, DataUtilities.calculateRowTotal(data, 1), 0.000000001d);
 	}
 
 	@Test
-	public void testCalculateRowTotalWithNullDataThrowsException() {
+	public void testCalculateRowTotalWithNullDataShouldThrowIllegalArgumentException() {
 		try {
 			DataUtilities.calculateRowTotal(null, 0);
 			fail("No exception thrown. The expected outcome was IllegalArgumentException.");
@@ -87,7 +87,7 @@ public class DataUtilitiesTest {
 	}
 
 	@Test
-	public void testCreateNumberArrayReturnsArrayWithSameLengthAndValues() {
+	public void testCreateNumberArrayShouldMatchInputLengthAndValues() {
 		double[] input = {1.5, -2.0, 0.0};
 		Number[] result = DataUtilities.createNumberArray(input);
 
@@ -108,7 +108,7 @@ public class DataUtilitiesTest {
 	}
 
 	@Test
-	public void testCreateNumberArrayForEmptyInputReturnsEmptyArray() {
+	public void testCreateNumberArrayForEmptyInputShouldBeEmptyArray() {
 		double[] input = {};
 		Number[] result = DataUtilities.createNumberArray(input);
 
@@ -118,7 +118,7 @@ public class DataUtilitiesTest {
 	}
 
 	@Test
-	public void testCreateNumberArrayWithNullInputThrowsException() {
+	public void testCreateNumberArrayWithNullInputShouldThrowIllegalArgumentException() {
 		try {
 			DataUtilities.createNumberArray(null);
 			fail("No exception thrown. The expected outcome was IllegalArgumentException.");
@@ -129,7 +129,7 @@ public class DataUtilitiesTest {
 	}
 
 	@Test
-	public void testCreateNumberArray2DReturnsMatrixWithSameShapeAndValues() {
+	public void testCreateNumberArray2DShouldMatchInputShapeAndValue() {
 		double[][] input = {
 				{1.0, 2.0},
 				{3.0, 4.0}
@@ -165,7 +165,7 @@ public class DataUtilitiesTest {
 	}
 
 	@Test
-	public void testCreateNumberArray2DWithNullInputThrowsException() {
+	public void testCreateNumberArray2DWithNullInputShouldThrowIllegalArgumentException() {
 		try {
 			DataUtilities.createNumberArray2D(null);
 			fail("No exception thrown. The expected outcome was IllegalArgumentException.");
@@ -176,7 +176,7 @@ public class DataUtilitiesTest {
 	}
 
 	@Test
-	public void testGetCumulativePercentagesReturnsCorrectRunningPercentages() {
+	public void testGetCumulativePercentagesShouldMatchExpectedRunningPercentages() {
 		KeyedValues data = createSampleKeyedValues();
 		KeyedValues result = DataUtilities.getCumulativePercentages(data);
 
@@ -194,7 +194,7 @@ public class DataUtilitiesTest {
 	}
 
 	@Test
-	public void testGetCumulativePercentagesForSingleValueReturnsOne() {
+	public void testGetCumulativePercentagesForSingleValueShouldBeOne() {
 		DefaultKeyedValues data = new DefaultKeyedValues();
 		data.addValue("Only", 7.0);
 
@@ -208,7 +208,7 @@ public class DataUtilitiesTest {
 	}
 
 	@Test
-	public void testGetCumulativePercentagesWithNullDataThrowsException() {
+	public void testGetCumulativePercentagesWithNullDataShouldThrowIllegalArgumentException() {
 		try {
 			DataUtilities.getCumulativePercentages(null);
 			fail("No exception thrown. The expected outcome was IllegalArgumentException.");
